@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
         {
             myRB.velocity = Vector2.zero;
         }*/
+        transform.position = new Vector2(transform.position.x, Mathf.Clamp(transform.position.y, limitInferior, limitSuperior));
     }
 
     void SetMinMax()
@@ -60,6 +61,9 @@ public class PlayerMovement : MonoBehaviour
         if (other.tag == "Candy")
         {
             CandyGenerator.instance.ManageCandy(other.gameObject.GetComponent<CandyController>(), this);
+        }else if (other.gameObject.tag == "Enemy")
+        {
+            player_lives = player_lives - 1;
         }
     }
 }
