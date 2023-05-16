@@ -15,7 +15,8 @@ public class GameController : MonoBehaviour
     public float contador = 0;
     float tiempoEntreEnemigos = 2.5f;
     [SerializeField] PlayerMovement player;
-    [SerializeField] TMP_Text tmp;
+    TMP_Text tmp;
+    [SerializeField] AudioSource lose;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,7 @@ public class GameController : MonoBehaviour
         if (player.player_lives <= 0)
         {
             tmp.text = "Life: " + 0;
+            lose.Play();
             onPlayerDie.Invoke();
         }
     }

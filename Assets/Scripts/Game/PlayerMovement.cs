@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public int player_lives = 4;
     Vector2 movementPlayer;
     private float velocityModifier = 10f;
+    [SerializeField] AudioSource hit;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +65,8 @@ public class PlayerMovement : MonoBehaviour
         }else if (other.gameObject.tag == "Enemy")
         {
             player_lives = player_lives - 1;
+            Destroy(other.gameObject);
+            hit.Play();
         }
     }
 }
