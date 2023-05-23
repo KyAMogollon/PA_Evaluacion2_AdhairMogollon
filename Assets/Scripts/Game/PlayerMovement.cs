@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movementPlayer;
     private float velocityModifier = 10f;
     [SerializeField] AudioSource hit;
+    Vector3 initialPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         if (down == KeyCode.None) down = KeyCode.DownArrow;*/
         myRB = GetComponent<Rigidbody2D>();
         SetMinMax();
+        initialPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -64,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
             CandyGenerator.instance.ManageCandy(other.gameObject.GetComponent<CandyController>(), this);
         }else if (other.gameObject.tag == "Enemy")
         {
+            transform.position = initialPosition;
             player_lives = player_lives - 1;
             Destroy(other.gameObject);
             hit.Play();

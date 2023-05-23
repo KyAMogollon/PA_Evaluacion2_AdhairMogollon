@@ -1807,9 +1807,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1947990700}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: MuteChannel
+      - m_Target: {fileID: 11400000, guid: 96a77402e3bdda64aa9d9ddd053e48f1, type: 2}
+        m_TargetAssemblyTypeName: SoundsSO, Assembly-CSharp
+        m_MethodName: MuteVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
