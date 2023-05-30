@@ -12,6 +12,7 @@ public class CandyGenerator : MonoBehaviour
     private float limitSuperior;
     private float limitInferior;
     public List<GameObject> actual_candies = new List<GameObject>();
+    [SerializeField] PlayerMovement player;
 
     void Awake()
     {
@@ -64,7 +65,7 @@ public class CandyGenerator : MonoBehaviour
         int live_changer = candy_script.lifeChanges;
         lives += live_changer;
         print(lives);
-        if (lives <= 0)
+        if (player.player_lives<=0 && player.player2_lives<=0)
         {
             SceneManager.LoadScene("GameOver");
         }

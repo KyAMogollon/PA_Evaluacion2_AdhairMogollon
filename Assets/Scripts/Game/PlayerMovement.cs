@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private float limitSuperior;
     private float limitInferior;
     public int player_lives = 4;
+    public int player2_lives = 4;
     Vector2 movementPlayer;
     private float velocityModifier = 10f;
     [SerializeField] AudioSource hit;
@@ -68,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position = initialPosition;
             player_lives = player_lives - 1;
+            player2_lives = player2_lives - 1;
             Destroy(other.gameObject);
             hit.Play();
         }
