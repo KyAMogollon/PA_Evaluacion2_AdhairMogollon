@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
     public float contadorP2 = 0;
     public int scoreP2 = 0;
     [SerializeField] UnityEvent onPlayerDie;
-    float tiempoEntreEnemigos = 2.5f;
+    public float tiempoEntreEnemigos = 1.5f;
     [SerializeField] PlayerMovement player;
     [SerializeField] AudioSource lose;
     // Start is called before the first frame update
